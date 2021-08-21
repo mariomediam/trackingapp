@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext } from "react";
 
-import { fire, auth, firebase } from "../config/Firebase";
+import {  auth, firebase } from "../config/Firebase";
 
 import { useHistory } from 'react-router'
 
@@ -18,8 +18,12 @@ export const AuthContextProvider = (props) => {
 
     const signIn = async () => {
         const rpta = await auth.signInWithPopup(proveedorGoogle)
-        history.push("/BuscarPedido")
-        // console.log("google!!",rpta)
+        const emailUser = rpta.additionalUserInfo.profile.email
+        if (emailUser === "mariomedinam@gmail.com"){
+            history.push("/BuscarPedido")
+        } else {
+            signOut()
+        }
     }
 
     const signOut = () => auth.signOut()

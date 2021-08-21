@@ -1,10 +1,8 @@
-import { useState, useEffect, useContext, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import {
   InputGroup,
   FormControl,
-  DropdownButton,
-  Dropdown,
   Accordion,
   Alert,
   FloatingLabel,
@@ -14,13 +12,8 @@ import { obtenerPedidoPorToken } from "../services/pedidoService";
 import { obtenerPedidoRutaPorPedidoId } from "../services/pedidoRutaService";
 import { obtenerDistritoPorId } from "../services/distritoService";
 import { obtenerProductosPorPedidoId } from "../services/pedidoProductoService";
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
+import {    
   useMapEvents,
-  useMap,
-  Popup,
 } from "react-leaflet";
 import Loading from "../components/Loading";
 import VerticalLinearStepper from "../components/Stepper";
@@ -30,8 +23,11 @@ export default function BuscarPedidoView() {
   const [productosEnPedido, setProductosEnPedido] = useState([]);
   const [almacen_origen, setAlmacen_origen] = useState([]);
   const [rutas, setRutas] = useState([]);
+  
   const [marcador, setMarcador] = useState([-12.0433, -77.0283]);
+  /*
   const [geoDistrito, setGeoDistrito] = useState([-16.4040105, -71.556521]);
+  */
   const [cargando, setCargando] = useState(false);
   const [existePedido, setExistePedido] = useState(false);
   const [textoExistePedido, setTextoExistePedido] = useState("");
@@ -43,8 +39,7 @@ export default function BuscarPedidoView() {
 
   const {
     register,
-    handleSubmit,
-    formState: { errors },
+    handleSubmit,    
   } = useForm();
 
   const recibirSubmit = async (datos) => {
@@ -73,7 +68,7 @@ export default function BuscarPedidoView() {
     if (pedidoTmp.length > 0) {
       textoExisteTmp = "";
       existePedidoTmp = true;
-      console.log("pedidoTmp", pedidoTmp);
+      
       const distritto_origen = await obtenerDistritoPorId(
         pedidoTmp[0].distr_id_destino
       );
@@ -91,9 +86,7 @@ export default function BuscarPedidoView() {
         pedidoTmp[0].pedido_id
       );
 
-      console.log("rutasTmp,", rutasTmp);
-      console.log("productosEnPedidoTmp", productosEnPedidoTmp);
-
+      
       setCargando(false);
     }
     setRutas(rutasTmp);

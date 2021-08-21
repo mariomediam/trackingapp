@@ -62,7 +62,7 @@ export default function NavTop() {
                 </Container>
               ) : (
                 <button className="btn btn-dark" onClick={signIn}>
-                  <i class="fas fa-sign-in-alt me-2" />
+                  <i className="fas fa-sign-in-alt me-2" />
                   Intranet
                 </button>
               )}

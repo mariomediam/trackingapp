@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Alert, FloatingLabel, Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+
 
 import Loading from "../components/Loading";
 import VerticalLinearStepper from "../components/Stepper";
@@ -11,7 +11,7 @@ import { useHistory } from 'react-router'
 
 export default function VerPedidoRutaView() {
   const { token } = useParams();
-  console.log("Token", token);
+  
 
   const [cargando, setCargando] = useState(true);
   const [pedido, setPedido] = useState([]);
@@ -44,7 +44,7 @@ export default function VerPedidoRutaView() {
     }
 
     setRutas(rutasTmp);
-    console.log("pedidoTmp", pedidoTmp);
+    
     setCargando(false);
   };
 

@@ -30,14 +30,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
-  console.log("editable", editable);
+  
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [steps, setSteps] = React.useState([]);
   //let steps = [];
   const [ruta, setRuta] = React.useState([]);
 
-  const controlStep = React.useRef();
+  //const controlStep = React.useRef();
 
   const handleNext = async (e) => {
     //setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -47,20 +47,17 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
       let pedidoRutaTmp = ruta[activeStep];
       pedidoRutaTmp.pedidoRuta_Recib = true;
       let fecha = new Date();
-      console.log("fecha", fecha);
+      
       pedidoRutaTmp.pedidoRuta_fecReal = fecha;
       await editarPedidoRuta(pedidoRutaTmp, pedidoRutaTmp.pedidoRuta_id);
       rutasTmp = await obtenerPedidoRutaPorPedidoId(pedidoRutaTmp.pedido_id);
-      console.log("rutasTmp despues de update", rutasTmp);
+      
       if (rutasTmp.length > 0) {
         rutasSeleccionadasTmp = rutasTmp.filter(
           (item) => item.almacen_id_origen === pedidoRutaTmp.almacen_id_origen
         );
       }
-      console.log(
-        "rutasSeleccionadasTmp despues de update",
-        rutasSeleccionadasTmp
-      );
+    
       setRuta(rutasSeleccionadasTmp);
       await Swal.fire({
         icon:'success',
@@ -69,10 +66,10 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
         confirmButtonText:'Aceptar'        
     })
     } catch (error) {
-      console.log("error");
+      
     }
   };
-
+/*
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
@@ -80,11 +77,12 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
   const handleReset = () => {
     setActiveStep(0);
   };
-
+*/
   function getSteps() {
     let pasos = [];
     let texto = "";
     let ultPaso = 0;
+  try {
     ruta.forEach((element, i) => {
       texto = element.ruta_pasoTipo;
       let convertedDate = "";
@@ -103,9 +101,14 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
 
       pasos.push(texto);
     });
-    //return ['asadasdada', 'Create an ad group', 'Create an ad'];
-
+    
+  } catch (error) {
+    
+  } finally {
     return [pasos, ultPaso];
+  }
+
+    
   }
 
   function getStepContent(step) {
@@ -130,7 +133,12 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
   }
 
   React.useEffect(() => {
-    setRuta(rutaSeleccionada);
+    try {
+      setRuta(rutaSeleccionada);  
+    } catch (error) {
+      
+    }
+    
   }, [rutaSeleccionada]);
 
   React.useEffect(() => {

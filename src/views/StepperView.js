@@ -52,7 +52,12 @@ export default function VerticalLinearStepper() {
   const steps = getSteps();
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    try {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);  
+    } catch (error) {
+      
+    }
+    
   };
 
   const handleBack = () => {

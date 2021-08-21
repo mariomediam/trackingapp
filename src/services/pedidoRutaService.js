@@ -46,7 +46,7 @@ const crearPedidoRuta = async (nuevoPedidoRuta) => {
 
 const editarPedidoRuta = async (pedidoRutaEditado, id) => {
     try {
-        console.log("pedidoRutaEditado", pedidoRutaEditado)
+        
         const headers = {
             "Content-Type": "application/json"
         }
