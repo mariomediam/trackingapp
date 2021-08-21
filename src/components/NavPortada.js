@@ -9,7 +9,7 @@ export default function NavTop() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img
             alt=""
             src={logo_empresa}
@@ -20,25 +20,34 @@ export default function NavTop() {
           ClickPack
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Navbar.Collapse className="justify-content-end">
-            <Container>
-              <Nav className="me-auto">
-                <Nav.Link href="/">Inicio</Nav.Link>
-                <Nav.Link href="/">Nosotros</Nav.Link>
-                <Nav.Link href="/">Servicios</Nav.Link>                
-                {userState ? (
-                  <Nav.Link href="/BuscarPedido">Buscar pedido</Nav.Link>
-                ) : (
-                  <div></div>
-                )}
-              </Nav>
-            </Container>
+        
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/">Inicio</Nav.Link>
+              <Nav.Link href="/Nosotros">Nosotros</Nav.Link>
+              <Nav.Link href="/Servicios">Servicios</Nav.Link>
 
-            <Navbar.Brand>
+            
+            </Nav>
+          </Navbar.Collapse>
+          
+
+          <Navbar.Collapse className="justify-content-end">
+            
               {userState ? (
                 <Container>
                   <Nav className="me-auto">
+                    <Nav.Link href="/BuscarPedido">Buscar pedido</Nav.Link>
+                    <NavDropdown title="Maestros" id="basic-nav-dropdown">
+                      <NavDropdown.Item href="/Distritos">
+                        Zonas de reparto
+                      </NavDropdown.Item>
+                      <NavDropdown.Item href="/Stock">
+                        Inventario de productos
+                      </NavDropdown.Item>
+                     
+                    </NavDropdown>
+              }
                     <NavDropdown
                       title={
                         <div className="d-inline">
@@ -66,9 +75,9 @@ export default function NavTop() {
                   Intranet
                 </button>
               )}
-            </Navbar.Brand>
+            
           </Navbar.Collapse>
-        </Navbar.Collapse>
+        
       </Container>
     </Navbar>
   );
