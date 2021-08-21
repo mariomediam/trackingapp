@@ -5,6 +5,7 @@ import BuscarPedidoView from './views/BuscarPedidoView'
 import VerPedidoRutaView from './views/VerPedidoRutaView'
 import DistritosView from './views/DistritosView'
 import ExistenciaView from './views/ExistenciaView'
+import PedidosView from './views/PedidosView'
 
 
 
@@ -17,6 +18,7 @@ export default function Routes() {
             <Route path="/VerPedidoRutaView/:token" exact component={VerPedidoRutaView} />
             <ProtectedRoute path="/Distritos" exact component={DistritosView} />
             <ProtectedRoute path="/Stock" exact component={ExistenciaView} />
+            <ProtectedRoute path="/Pedidos" exact component={PedidosView} />
             
         </div>
     )

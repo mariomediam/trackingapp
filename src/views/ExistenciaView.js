@@ -30,7 +30,7 @@ export default function ExistenciaView() {
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={item.prod_imagen} />
                 <Card.Body>
-                  <Card.Title>Almacen: {item.almacen_id} <br/> {item.prod_descripcion}</Card.Title>
+                  <Card.Title>Almacen: {item.almacen_id} <br/> {item.prod_nombre}</Card.Title>
                   <Card.Text>
                     {item.prod_descripcion} <br/>
                     Stock: {item.existencia_stock}

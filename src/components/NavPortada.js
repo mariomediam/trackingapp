@@ -39,6 +39,9 @@ export default function NavTop() {
                   <Nav className="me-auto">
                     <Nav.Link href="/BuscarPedido">Buscar pedido</Nav.Link>
                     <NavDropdown title="Maestros" id="basic-nav-dropdown">
+                      <NavDropdown.Item href="/Pedidos">
+                        Pedidos
+                      </NavDropdown.Item>
                       <NavDropdown.Item href="/Distritos">
                         Zonas de reparto
                       </NavDropdown.Item>
