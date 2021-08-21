@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { obtenerPedidos } from "../services/pedidoService";
+import { obtenerDistritoPorId } from "../services/distritoService";
 import { obtenerProductosPorPedidoId } from "../services/pedidoProductoService";
 import Loading from "../components/Loading";
 import { Accordion } from "react-bootstrap";
@@ -15,6 +16,9 @@ export default function PedidosView() {
     console.log("pedidos", pedidos);
     for (let i = 0; i < pedidos.length; i++) {
       let productos = [];
+      let distrito = await(obtenerDistritoPorId(pedidos[i].distr_id_destino))
+      pedidos[i].lugar = distrito.dpto_nombre + " / "  + distrito.prov_nombre + " / " + distrito.distr_nombre
+      
       productos = await obtenerProductosPorPedidoId(pedidos[i].pedido_id);
       pedidosProductosTmp.push([pedidos[i], productos]);
     }
@@ -57,6 +61,27 @@ export default function PedidosView() {
                             <small>Cliente:</small>
                           </div>
                           <div className="col">{item[0].pedido_cliente}</div>
+                        </div>
+                        <hr />
+                        <div className="row">
+                          <div className="col-lg-2 sol-sm-12">
+                            <small>Correo:</small>
+                          </div>
+                          <div className="col">{item[0].pedido_email}</div>
+                        </div>
+                        <hr />
+                        <div className="row">
+                          <div className="col-lg-2 sol-sm-12">
+                            <small>Teléfono:</small>
+                          </div>
+                          <div className="col">{item[0].pedido_telefono}</div>
+                        </div>
+                        <hr />
+                        <div className="row">
+                          <div className="col-lg-2 sol-sm-12">
+                            <small>Destino:</small>
+                          </div>
+                          <div className="col">{item[0].lugar} / {item[0].pedido_direccion} </div>
                         </div>
                         <hr />
                         <div className="row">
