@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom'
 import Routes from './Routes'
 import NavPortada from "./components/NavPortada"
 import { AuthContextProvider } from "./context/authContext";
+import "../src/App.css"
 
 export default function App() {
   return (
