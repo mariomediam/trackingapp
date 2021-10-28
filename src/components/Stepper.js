@@ -49,6 +49,7 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
       let fecha = new Date();
       
       pedidoRutaTmp.pedidoRuta_fecReal = fecha;
+      pedidoRutaTmp.pedRutaComent = "ok"
       await editarPedidoRuta(pedidoRutaTmp, pedidoRutaTmp.pedidoRuta_id);
       rutasTmp = await obtenerPedidoRutaPorPedidoId(pedidoRutaTmp.pedido_id);
       
@@ -78,6 +79,7 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
     setActiveStep(0);
   };
 */
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function getSteps() {
     let pasos = [];
     let texto = "";
@@ -151,7 +153,11 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
       }*/
       setActiveStep(stepsTmp[1]);
     } catch (error) {}
+<<<<<<< HEAD
   },);
+=======
+  }, [getSteps, ruta]);
+>>>>>>> b174353a96739128f824710ebda6d91ad6fdc950
 
   return (
     <div className={classes.root}>
