@@ -79,6 +79,7 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
     setActiveStep(0);
   };
 */
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   function getSteps() {
     let pasos = [];
     let texto = "";
@@ -152,7 +153,7 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
       }*/
       setActiveStep(stepsTmp[1]);
     } catch (error) {}
-  }, [ruta]);
+  }, [getSteps, ruta]);
 
   return (
     <div className={classes.root}>
