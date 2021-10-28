@@ -49,6 +49,7 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
       let fecha = new Date();
       
       pedidoRutaTmp.pedidoRuta_fecReal = fecha;
+      pedidoRutaTmp.pedRutaComent = "ok"
       await editarPedidoRuta(pedidoRutaTmp, pedidoRutaTmp.pedidoRuta_id);
       rutasTmp = await obtenerPedidoRutaPorPedidoId(pedidoRutaTmp.pedido_id);
       

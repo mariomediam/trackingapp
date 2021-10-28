@@ -60,23 +60,27 @@ export default function BuscarPedidoView() {
   const obtenerRutas = async (token) => {
     setCargando(true);
     let existePedidoTmp = false;
+    
     let textoExisteTmp = `No se encontro el token ${token}`;
     let rutasTmp = [];
     let productosEnPedidoTmp = [];
 
+    
     let pedidoTmp = await obtenerPedidoPorToken(token);
     if (pedidoTmp.length > 0) {
       textoExisteTmp = "";
       existePedidoTmp = true;
       
+    
       const distritto_origen = await obtenerDistritoPorId(
         pedidoTmp[0].distr_id_destino
       );
+      
       pedidoTmp[0].dpto_nombre = distritto_origen.dpto_nombre;
       pedidoTmp[0].prov_nombre = distritto_origen.prov_nombre;
       pedidoTmp[0].distr_nombre = distritto_origen.distr_nombre;
-      //console.log("pedido[0]", pedidoTmp[0])
-      //console.log("distritto_origen", distritto_origen)
+      // console.log("pedido[0]", pedidoTmp[0])
+      // console.log("distritto_origen", distritto_origen)
 
       setPedido(pedidoTmp[0]);
       //console.log(pedido)

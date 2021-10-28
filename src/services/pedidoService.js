@@ -5,11 +5,37 @@ import { crearPedidoRuta } from "./pedidoRutaService"
 
 
 
-const URL = `${process.env.REACT_APP_API}/Pedido`
+//const URL = `${process.env.REACT_APP_API}/Pedido`
+const URL = `${process.env.REACT_APP_API}`
 
 const obtenerPedidos = async () => {
     try {
-        let { data } = await axios.get(URL)
+        
+        //let { data } = await axios.get(URL)
+        let { status, data: {content : filas} } = await axios.get(`${URL}/pedidos`)
+        let data = []  
+        if (status===200 && filas.length > 0){
+            filas.forEach((fila) => {
+                data.push(
+                    {                        
+                        
+                        "pedido_token":  fila["pedidoToken"],
+                        "pedido_fecha": fila["pedidoFecha"],
+                        "pedido_cliente": fila["clienteNombre"],
+                        "distr_id_destino": fila["pedidoDistrDestino"],
+                        "pedido_direccion": fila["pedidoDireccion"],
+                        "pedido_dirgeo": fila["pedidoGeo"],
+                        "pedido_email": fila["clienteCorreo"],
+                        "pedido_telefono": fila["clienteTelefono"],
+                        "pedido_id": fila["pedidoId"]
+                       
+                    }
+                )
+            })
+            
+            
+        }
+        
         return data
     } catch (error) {
         throw error
@@ -17,11 +43,31 @@ const obtenerPedidos = async () => {
 }
 
 const obtenerPedidoPorToken = async(token) => {
+    let status = 0
     try {
         
-        let { data } = await axios.get(`${URL}?pedido_token=${token}`)
+        //let { data } = await axios.get(`${URL}?pedido_token=${token}`)
+        let { status, data: {content : filas} } = await axios.get(`${URL}/buscar_pedido?token=${token}`)
+        let data = []
+        if (status===200 && filas.length > 0){
+            data.push(
+                {
+                    "pedido_token":  filas[0]["pedidoToken"],
+                    "pedido_fecha": filas[0]["pedidoFecha"],
+                    "pedido_cliente": filas[0]["clienteNombre"],
+                    "distr_id_destino": filas[0]["pedidoDistrDestino"],
+                    "pedido_direccion": filas[0]["pedidoDireccion"],
+                    "pedido_dirgeo": filas[0]["pedidoGeo"],
+                    "pedido_email": filas[0]["clienteCorreo"],
+                    "pedido_telefono": filas[0]["clienteTelefono"],
+                    "pedido_id": filas[0]["pedidoId"]
+                }
+            )
+            
+        }
         return data //ya tenemos los datos
     } catch (error) {
+        console.log("eeror", status)
         throw error
     }
 }

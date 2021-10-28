@@ -31,6 +31,7 @@ export default function VerPedidoRutaView() {
     if (pedidoTmp.length > 0) {
       setExistePedido(true);
       rutasTmp = await obtenerPedidoRutaPorPedidoId(pedidoTmp[0].pedido_id);
+      console.log(rutasTmp)
       setPedido(pedidoTmp[0]);
       if (rutasTmp.length > 0) {
         rutasTmp.forEach((item) => {
