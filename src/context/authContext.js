@@ -19,7 +19,7 @@ export const AuthContextProvider = (props) => {
     const signIn = async () => {
         const rpta = await auth.signInWithPopup(proveedorGoogle)
         const emailUser = rpta.additionalUserInfo.profile.email
-        if (emailUser === "mariomedinam@gmail.com" or emailUser === "kat.pao.24@gmail.com"){
+        if (emailUser === "mariomedinam@gmail.com" || emailUser === "kat.pao.24@gmail.com"){
             history.push("/BuscarPedido")
         } else {
             signOut()
