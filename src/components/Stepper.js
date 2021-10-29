@@ -49,6 +49,7 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
       let fecha = new Date();
       
       pedidoRutaTmp.pedidoRuta_fecReal = fecha;
+      pedidoRutaTmp.pedRutaComent = "ok"
       await editarPedidoRuta(pedidoRutaTmp, pedidoRutaTmp.pedidoRuta_id);
       rutasTmp = await obtenerPedidoRutaPorPedidoId(pedidoRutaTmp.pedido_id);
       
@@ -73,6 +74,7 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+
   const handleReset = () => {
     setActiveStep(0);
   };
@@ -150,7 +152,6 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
       }*/
       setActiveStep(stepsTmp[1]);
     } catch (error) {}
-
   }, [ruta]);
 
   return (

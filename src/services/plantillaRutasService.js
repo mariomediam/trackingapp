@@ -25,7 +25,7 @@ const obtenerPlantillaRutaPorAlmDist = async(parmAlmacen_id, parmDistrito_id) =>
         
         let { data } = await axios.get(URL)
         
-        return data.filter(item => item.almacen_id === parmAlmacen_id && item.distr_id_destino === parmDistrito_id)
+        return data.filter(item => item.almacen_id == parmAlmacen_id && item.distr_id_destino == parmDistrito_id)
     } catch (error) {
         throw error
     } 

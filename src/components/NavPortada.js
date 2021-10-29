@@ -2,8 +2,6 @@ import { useContext } from "react";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import logo_empresa from "../assets/logo_empresa.png";
 import { AuthContext } from "../context/authContext";
-import "../App.css"
-
 
 export default function NavTop() {
   const { signIn, userState, signOut } = useContext(AuthContext);
@@ -25,14 +23,20 @@ export default function NavTop() {
         
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/" style={{":hover":{borderBottom:"3px solid yellow"}}}>Inicio</Nav.Link>
+              <Nav.Link href="/">Inicio</Nav.Link>
               <Nav.Link href="/Nosotros">Nosotros</Nav.Link>
               <Nav.Link href="/Servicios">Servicios</Nav.Link>
-          </Nav>
+
+            
+            </Nav>
+          </Navbar.Collapse>
+          
+
+          <Navbar.Collapse className="justify-content-end">
             
               {userState ? (
                 <Container>
-                  <Nav className="me-auto justify-content-end">
+                  <Nav className="me-auto">
                     <Nav.Link href="/BuscarPedido">Buscar pedido</Nav.Link>
                     <NavDropdown title="Maestros" id="basic-nav-dropdown">
                       <NavDropdown.Item href="/Pedidos">
@@ -46,7 +50,7 @@ export default function NavTop() {
                       </NavDropdown.Item>
                      
                     </NavDropdown>
-              
+              }
                     <NavDropdown
                       title={
                         <div className="d-inline">
