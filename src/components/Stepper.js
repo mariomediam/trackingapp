@@ -150,6 +150,7 @@ export default function VerticalLinearStepper({ rutaSeleccionada, editable }) {
       }*/
       setActiveStep(stepsTmp[1]);
     } catch (error) {}
+
   }, [ruta]);
 
   return (
