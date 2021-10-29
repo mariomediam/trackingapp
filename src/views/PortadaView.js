@@ -30,38 +30,30 @@ export default function PortadaView() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="container my-auto d-flex justify-content-center">
-          <div>
-            <br />
-            <br />
-            <br />
+        <div className="container my-auto d-flex justify-content-center align-items-center">
+          <div className="d-flex justify-content-center align-items-center">
             <div className="col-lg-12 col-sm-10">
-              <Card>
-                <Card.Header as="h5">Seguimiento de envíos</Card.Header>
+              <Card className="my-5 d-flex justify-content-center align-items-center">
+                <Card.Header as="h2" className="py-3">Seguimiento de envíos</Card.Header>
                 <Card.Body>
-                  <Card.Title>Ingrese número de tracking</Card.Title>
+                  <Card.Title className="mb-5 text-center">Ingrese número de tracking</Card.Title>
 
                   <Form onSubmit={handleSubmit(recibirSubmit)}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                      <Form.Control type="text" placeholder="Ej. 4fJ94S" {...register("tokenBuscado", { required: true })}/>
-                      <Form.Text className="text-muted" >
-                        No comparta su token con otras personas
-                      </Form.Text>
+                    <Form.Group className="my-5" controlId="formBasicEmail">
+                      <Form.Control type="text" placeholder="Ej. 4fJ94S" {...register("tokenBuscado", { required: true })}/>                   
                     </Form.Group>
-                    <div className="d-grid gap-2">
-                    <Button type="submit"  variant="dark" size="lg" >
-                      Ir al pedido
-                    </Button>
+                    <Form.Text className="text-muted" >
+                        No comparta su token con otras personas
+                    </Form.Text>
+                    <div className="mt-3">
+                      <Button className="w-100" type="submit" variant="dark" size="lg" >
+                        Ir al pedido
+                      </Button>
                   </div>
-                  </Form>
-
-                  
+                  </Form>  
                 </Card.Body>
               </Card>
             </div>
-            <br />
-            <br />
-            <br />
           </div>
         </div>
       </div>
