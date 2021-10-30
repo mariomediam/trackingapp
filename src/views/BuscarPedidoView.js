@@ -17,6 +17,7 @@ import {
 } from "react-leaflet";
 import Loading from "../components/Loading";
 import VerticalLinearStepper from "../components/Stepper";
+import { OutlinedInput } from "@material-ui/core";
 
 
 export default function BuscarPedidoView() {
@@ -141,12 +142,12 @@ export default function BuscarPedidoView() {
 
   return (
     <div>
-      <div className="container mt-4">
+      <div className="container my-4">
         <h1>Buscar pedido</h1>
         <div className="row">
           <div className="col-lg-3 col-sm-12">
             <form onSubmit={handleSubmit(recibirSubmit)}>
-              <InputGroup>
+              <InputGroup className="mt-4">
                 <FormControl
                   type="text"
                   maxLength="10"
@@ -154,8 +155,9 @@ export default function BuscarPedidoView() {
                   aria-label="Input Token"
                   aria-describedby="btnGroupToken"
                   {...register("token", { require: true })}
+                  style={{focus:OutlinedInput}}
                 />
-                <button type="submit" className="btb btn-dark">
+                <button type="submit" className="btn btn-dark">
                   Buscar
                 </button>
               </InputGroup>
