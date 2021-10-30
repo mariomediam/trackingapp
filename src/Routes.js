@@ -7,6 +7,7 @@ import DistritosView from './views/DistritosView'
 import ExistenciaView from './views/ExistenciaView'
 import PedidosView from './views/PedidosView'
 import Servicios from './views/ServiciosView'
+import Contactos from './views/ContactosView'
 import EstadisticaDistritosView from './views/EstadisticaDistritoView'
 import EstadisticaProductosView from './views/EstadisticaProductoView'
 import EstadisticaClienteView from './views/EstadisticaClienteView'
@@ -19,6 +20,7 @@ export default function Routes() {
         <div>
             <Route path="/" exact component={PortadaView} />
             <Route path="/Servicios" exact component={Servicios} />
+            <Route path="/Contactos" exact component={Contactos} />
             <ProtectedRoute path="/BuscarPedido" exact component={BuscarPedidoView} />
             <Route path="/VerPedidoRutaView/:token" exact component={VerPedidoRutaView} />
             <ProtectedRoute path="/Distritos" exact component={DistritosView} />

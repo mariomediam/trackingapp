@@ -24,8 +24,8 @@ export default function NavTop() {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto d-flex justify-content-between align-items-center">
               <Nav.Link href="/">Inicio</Nav.Link>
-              <Nav.Link href="/Nosotros">Nosotros</Nav.Link>
               <Nav.Link href="/Servicios">Servicios</Nav.Link>
+              <Nav.Link href="/Contactos">Contáctanos</Nav.Link>
             </Nav>  
               {userState ? (
                   <Nav className="align-items-center">
