@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom'
 import Routes from './Routes'
 import NavPortada from "./components/NavPortada"
 import { AuthContextProvider } from "./context/authContext";
-import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -14,7 +13,6 @@ export default function App() {
           <Switch>
             <Routes />
           </Switch>
-          <Footer />
         </AuthContextProvider>
       </Router>
     </div>
