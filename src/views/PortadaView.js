@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router'
 
 import imgFondo from "../assets/pic1.jpg";
+import imgRastreo from "../assets/rastreo.png";
 import imgEmpresa from "../assets/empresa.jpg";
 import imgPlaya from "../assets/playa.jpg";
 import imgFaqs from "../assets/faqs.jpg";
@@ -33,8 +34,8 @@ export default function PortadaView() {
         <div className="container my-auto d-flex justify-content-center align-items-center">
           <div className="d-flex justify-content-center align-items-center">
             <div className="col-lg-12 col-xs-12">
-              <Card className="my-5 d-flex justify-content-center align-items-center">
-                <Card.Header as="h2" className="py-3">Seguimiento de envíos</Card.Header>
+              <Card className="my-5 d-flex justify-content-center align-items-center ">
+                <Card.Header as="h2" className="w-100">Seguimiento de envíos</Card.Header>
                 <Card.Body>
                   <Card.Title className="mb-5 text-center">Ingrese número de tracking</Card.Title>
 
@@ -66,9 +67,9 @@ export default function PortadaView() {
         </div>
       </div>
       <div className="row">
-        <div className="col-md-12 d-flex justify-content-center align-items-center">
-          <div className="container row">
-          <Card border="danger" style={{height:"550px"}}  className="col-md-4 col-xs-6 ms-3 mb-5 p-1">
+        <div className="col-md-12">
+          <div className="row d-flex justify-content-center align-items-center">
+          <Card style={{height:"550px"}}  className="col-md-4 col-xs-6 ms-3 mb-5 p-1">
             <Card.Img variant="top" src={imgEmpresa} height="250px" alt="Pequeña empresa" />
             <Card.Body>
               <Card.Title>Servicios para pequeñas empresas</Card.Title>
@@ -82,7 +83,19 @@ export default function PortadaView() {
               <small className="text-muted">Last updated 3 mins ago</small>
             </Card.Footer>
           </Card>
-          <Card border="danger" style={{height:"550px"}} className="col-md-4 col-xs-6 ms-3 mb-5 p-1">
+          <Card style={{height:"550px"}}  className="col-md-4 col-xs-6 ms-3 mb-5 p-1">
+            <Card.Img variant="top" src={imgRastreo} height="250px" alt="Pequeña empresa" />
+            <Card.Body>
+              <Card.Title>Soluciones de rastreo a medida</Card.Title>
+              <Card.Text>
+              Utilice el rastreo GPS de ClickPack para proteger, gestionar y optimizar de forma fiable las operaciones de su flota incluso en los entornos más exigentes.
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">Last updated 3 mins ago</small>
+            </Card.Footer>
+          </Card>
+          <Card style={{height:"550px"}} className="col-md-4 col-xs-6 ms-3 mb-5 p-1">
             <Card.Img variant="top" src={imgPlaya} height="250px" alt="Servicio Premium" />
             <Card.Body>
               <Card.Title>Servicio de reenvío premium</Card.Title>
@@ -96,16 +109,14 @@ export default function PortadaView() {
               <small className="text-muted">Last updated 3 mins ago</small>
             </Card.Footer>
           </Card>
-          <Card border="danger" style={{height:"550px"}} className="col-md-4 col-xs-6 ms-3 mb-5 p-1">
+          <Card style={{height:"550px"}} className="col-md-4 col-xs-6 ms-3 mb-5 p-1">
             <Card.Img variant="top" src={imgFaqs} height="250px" alt="Preguntas frecuentes." />
             <Card.Body>
               <Card.Title>Preguntas frecuentes sobre coronavirus</Card.Title>
               <Card.Text>
                 Visite nuestras Preguntas frecuentes para obtener más
-                información sobre cómo estamos manejando los efectos de esta
-                pandemia al tiempo que garantizamos un manejo y entrega
-                seguros del correo a todos los clientes residenciales y
-                comerciales.
+                información sobre cómo manejamos los efectos de esta
+                pandemia al tiempo que garantizamos un manejo y entrega seguro.
               </Card.Text>
             </Card.Body>
             <Card.Footer>
