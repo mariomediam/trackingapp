@@ -1,7 +1,6 @@
 import { Button, Card, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router'
-import Footer from './components/Footer';
 
 import imgFondo from "../assets/pic1.jpg";
 import imgEmpresa from "../assets/empresa.jpg";
@@ -69,7 +68,7 @@ export default function PortadaView() {
       <div className="row">
         <div className="col-md-12 d-flex justify-content-center align-items-center">
           <div className="container row">
-          <Card border="danger" style={{height:"550px"}}  className="col-md-5 col-xs-6 col-xl-3 ms-3 mb-5 p-1">
+          <Card border="danger" style={{height:"550px"}}  className="col-md-4 col-xs-6 ms-3 mb-5 p-1">
             <Card.Img variant="top" src={imgEmpresa} height="250px" alt="Pequeña empresa" />
             <Card.Body>
               <Card.Title>Servicios para pequeñas empresas</Card.Title>
@@ -83,7 +82,7 @@ export default function PortadaView() {
               <small className="text-muted">Last updated 3 mins ago</small>
             </Card.Footer>
           </Card>
-          <Card border="danger" style={{height:"550px"}} className="col-xl-3 col-md-5 col-xs-6 ms-3 mb-5 p-1">
+          <Card border="danger" style={{height:"550px"}} className="col-md-4 col-xs-6 ms-3 mb-5 p-1">
             <Card.Img variant="top" src={imgPlaya} height="250px" alt="Servicio Premium" />
             <Card.Body>
               <Card.Title>Servicio de reenvío premium</Card.Title>
@@ -97,7 +96,7 @@ export default function PortadaView() {
               <small className="text-muted">Last updated 3 mins ago</small>
             </Card.Footer>
           </Card>
-          <Card border="danger" style={{height:"550px"}} className="col-xl-3 col-md-5 col-xs-6 ms-3 mb-5 p-1">
+          <Card border="danger" style={{height:"550px"}} className="col-md-4 col-xs-6 ms-3 mb-5 p-1">
             <Card.Img variant="top" src={imgFaqs} height="250px" alt="Preguntas frecuentes." />
             <Card.Body>
               <Card.Title>Preguntas frecuentes sobre coronavirus</Card.Title>
@@ -116,8 +115,6 @@ export default function PortadaView() {
           </div>
         </div>
       </div>
-
-    <Footer />
     </div>
     
   );

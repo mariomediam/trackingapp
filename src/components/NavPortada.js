@@ -7,7 +7,7 @@ export default function NavTop() {
   const { signIn, userState, signOut } = useContext(AuthContext);
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="danger" variant="dark" className="p-3">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="p-3">
       <Container className="d-flex justify-content-between align-items-center">
         <Navbar.Brand href="/">
           <img
@@ -28,7 +28,7 @@ export default function NavTop() {
               <Nav.Link href="/Servicios">Servicios</Nav.Link>
             </Nav>  
               {userState ? (
-                  <Nav className="">
+                  <Nav className="align-items-center">
                     <Nav.Link href="/BuscarPedido" className="me-3">Buscar pedido</Nav.Link>
                     <NavDropdown className="me-3" title="Maestros" id="basic-nav-dropdown">
                       <NavDropdown.Item href="/Pedidos">
