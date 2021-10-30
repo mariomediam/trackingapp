@@ -25,7 +25,7 @@ export default function Servicios() {
                     <Link to="./" className="btn btn-light text-center m-3">Revisa tu pedido</Link>
                 </div>
             </div>
-            <div className="mt-5 ">
+            <div className="mt-5 " >
                 <h3>Implemente el poder de la experiencia en envíos</h3>
                 <p>Sin importar si es un empresario o una empresa, las herramientas y la tecnología de UPS lo ayudarán a crear eficiencias, a centralizar el control, a recortar costos y a aumentar la productividad. Y con más flexibilidad y mejor información, tendrá la tranquilidad de saber que está haciendo sus envíos de la mejor manera para su empresa.</p>
                 <Image src={imgWorld}  alt="Experiencia de envíos" height="250px" />
