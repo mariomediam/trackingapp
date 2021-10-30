@@ -155,7 +155,6 @@ export default function BuscarPedidoView() {
                   aria-label="Input Token"
                   aria-describedby="btnGroupToken"
                   {...register("token", { require: true })}
-                  style={{focus:OutlinedInput}}
                 />
                 <button type="submit" className="btn btn-dark">
                   Buscar
