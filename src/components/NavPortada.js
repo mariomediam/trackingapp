@@ -7,38 +7,30 @@ export default function NavTop() {
   const { signIn, userState, signOut } = useContext(AuthContext);
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container>
+    <Navbar collapseOnSelect expand="lg" bg="danger" variant="dark" className="p-3">
+      <Container className="d-flex justify-content-between align-items-center">
         <Navbar.Brand href="/">
           <img
             alt=""
             src={logo_empresa}
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
+            width="40"
+            height="40"
+            className="d-inline-block align-center color-dark me-3"
           />{" "}
           ClickPack
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto d-flex justify-content-between align-items-center">
               <Nav.Link href="/">Inicio</Nav.Link>
               <Nav.Link href="/Nosotros">Nosotros</Nav.Link>
               <Nav.Link href="/Servicios">Servicios</Nav.Link>
-
-            
-            </Nav>
-          </Navbar.Collapse>
-          
-
-          <Navbar.Collapse className="justify-content-end">
-            
+            </Nav>  
               {userState ? (
-                <Container>
-                  <Nav className="me-auto">
-                    <Nav.Link href="/BuscarPedido">Buscar pedido</Nav.Link>
-                    <NavDropdown title="Maestros" id="basic-nav-dropdown">
+                  <Nav className="">
+                    <Nav.Link href="/BuscarPedido" className="me-3">Buscar pedido</Nav.Link>
+                    <NavDropdown className="me-3" title="Maestros" id="basic-nav-dropdown">
                       <NavDropdown.Item href="/Pedidos">
                         Pedidos
                       </NavDropdown.Item>
@@ -48,16 +40,14 @@ export default function NavTop() {
                       <NavDropdown.Item href="/Stock">
                         Inventario de productos
                       </NavDropdown.Item>
-                     
                     </NavDropdown>
-              }
                     <NavDropdown
                       title={
                         <div className="d-inline">
                           <img
                             src={userState.photoURL}
-                            className="me-2"
-                            style={{ borderRadius: "50%", width: "30px" }}
+                            className="me-3"
+                            style={{ borderRadius: "50%", width: "35px" }}
                             alt="avatar"
                           />
                           <small className="text-white font-weight-light">
@@ -71,7 +61,6 @@ export default function NavTop() {
                       </NavDropdown.Item>
                     </NavDropdown>
                   </Nav>
-                </Container>
               ) : (
                 <button className="btn btn-dark" onClick={signIn}>
                   <i className="fas fa-sign-in-alt me-2" />
@@ -80,7 +69,6 @@ export default function NavTop() {
               )}
             
           </Navbar.Collapse>
-        
       </Container>
     </Navbar>
   );

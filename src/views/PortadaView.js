@@ -1,6 +1,7 @@
-import { Button, Card, Form, CardGroup } from "react-bootstrap";
+import { Button, Card, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router'
+import Footer from './components/Footer';
 
 import imgFondo from "../assets/pic1.jpg";
 import imgEmpresa from "../assets/empresa.jpg";
@@ -21,7 +22,7 @@ export default function PortadaView() {
   }
 
   return (
-    <div>
+    <div className="mb-5">
       <div
         style={{
           backgroundImage: `url(${imgFondo})`,
@@ -32,7 +33,7 @@ export default function PortadaView() {
       >
         <div className="container my-auto d-flex justify-content-center align-items-center">
           <div className="d-flex justify-content-center align-items-center">
-            <div className="col-lg-12 col-sm-10">
+            <div className="col-lg-12 col-xs-12">
               <Card className="my-5 d-flex justify-content-center align-items-center">
                 <Card.Header as="h2" className="py-3">Seguimiento de envíos</Card.Header>
                 <Card.Body>
@@ -58,7 +59,7 @@ export default function PortadaView() {
         </div>
       </div>
       <div className="row">
-        <div className="col m-4">
+        <div className="col m-5" style={{color:"#444444"}}>
           <h2 style={{ textAlign: "center" }}>
             Con ClickPack los usuarios pueden rastrear la ubicación de sus
             pedidos.
@@ -66,57 +67,58 @@ export default function PortadaView() {
         </div>
       </div>
       <div className="row">
-        <div className="col">
-          <CardGroup>
-            <Card className="p-3">
-              <Card.Img variant="top" src={imgEmpresa} height="250px" />
-              <Card.Body>
-                <Card.Title>Servicios para pequeñas empresas</Card.Title>
-                <Card.Text>
+        <div className="col-md-12 d-flex justify-content-center align-items-center">
+          <div className="container row">
+          <Card border="danger" style={{height:"550px"}}  className="col-md-5 col-xs-6 col-xl-3 ms-3 mb-5 p-1">
+            <Card.Img variant="top" src={imgEmpresa} height="250px" alt="Pequeña empresa" />
+            <Card.Body>
+              <Card.Title>Servicios para pequeñas empresas</Card.Title>
+              <Card.Text>
                   Envíe los pedidos de sus clientes en poco tiempo con los
-                  servicios en línea a los que puede acceder desde el trabajo o
-                  desde casa: imprima etiquetas, programe recolecciones, gane
-                  puntos de fidelidad para ahorrar en envíos futuros y más.
-                  longer.
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-            <Card className="p-3">
-              <Card.Img variant="top" src={imgPlaya} height="250px" />
-              <Card.Body>
-                <Card.Title>Servicio de reenvío premium</Card.Title>
-                <Card.Text>
-                  ¿Lejos en costas más soleadas? Haga que su correo sea
-                  empaquetado y reenviado en un envío semanal de Priority
-                  ClickPack
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-            <Card className="p-3">
-              <Card.Img variant="top" src={imgFaqs} height="250px" />
-              <Card.Body>
-                <Card.Title>Preguntas frecuentes sobre coronavirus</Card.Title>
-                <Card.Text>
-                  Visite nuestras Preguntas frecuentes para obtener más
-                  información sobre cómo estamos manejando los efectos de esta
-                  pandemia al tiempo que garantizamos un manejo y entrega
-                  seguros del correo a todos los clientes residenciales y
-                  comerciales.
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </Card.Footer>
-            </Card>
-          </CardGroup>
+                    servicios en línea a los que puede acceder desde el trabajo o
+                    desde casa.
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">Last updated 3 mins ago</small>
+            </Card.Footer>
+          </Card>
+          <Card border="danger" style={{height:"550px"}} className="col-xl-3 col-md-5 col-xs-6 ms-3 mb-5 p-1">
+            <Card.Img variant="top" src={imgPlaya} height="250px" alt="Servicio Premium" />
+            <Card.Body>
+              <Card.Title>Servicio de reenvío premium</Card.Title>
+              <Card.Text>
+                ¿Lejos en costas más soleadas? Haga que su correo sea
+                empaquetado y reenviado en un envío semanal de Priority
+                ClickPack
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">Last updated 3 mins ago</small>
+            </Card.Footer>
+          </Card>
+          <Card border="danger" style={{height:"550px"}} className="col-xl-3 col-md-5 col-xs-6 ms-3 mb-5 p-1">
+            <Card.Img variant="top" src={imgFaqs} height="250px" alt="Preguntas frecuentes." />
+            <Card.Body>
+              <Card.Title>Preguntas frecuentes sobre coronavirus</Card.Title>
+              <Card.Text>
+                Visite nuestras Preguntas frecuentes para obtener más
+                información sobre cómo estamos manejando los efectos de esta
+                pandemia al tiempo que garantizamos un manejo y entrega
+                seguros del correo a todos los clientes residenciales y
+                comerciales.
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">Last updated 3 mins ago</small>
+            </Card.Footer>
+          </Card>
+          </div>
         </div>
       </div>
+
+    <Footer />
     </div>
+    
   );
 }
