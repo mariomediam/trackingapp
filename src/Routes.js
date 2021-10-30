@@ -6,13 +6,9 @@ import VerPedidoRutaView from './views/VerPedidoRutaView'
 import DistritosView from './views/DistritosView'
 import ExistenciaView from './views/ExistenciaView'
 import PedidosView from './views/PedidosView'
-<<<<<<< HEAD
 import EstadisticaDistritosView from './views/EstadisticaDistritoView'
 import EstadisticaProductosView from './views/EstadisticaProductoView'
 import EstadisticaClienteView from './views/EstadisticaClienteView'
-=======
-import Servicios from './views/ServiciosView'
->>>>>>> 015be15cc4507a6630327af90b4aa8973e8e562c
 
 
 
