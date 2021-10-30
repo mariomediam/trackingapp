@@ -48,6 +48,15 @@ export default function NavTop() {
                       <NavDropdown.Item href="/Stock">
                         Inventario de productos
                       </NavDropdown.Item>
+                      <NavDropdown.Item href="/EstadisticaDistritos">
+                        Compras por distrito
+                      </NavDropdown.Item>
+                      <NavDropdown.Item href="/EstadisticaProductos">
+                        Compras por producto
+                      </NavDropdown.Item>
+                      <NavDropdown.Item href="/EstadisticaClientes">
+                        Compras por cliente
+                      </NavDropdown.Item>
                      
                     </NavDropdown>
               }
